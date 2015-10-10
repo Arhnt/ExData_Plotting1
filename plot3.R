@@ -9,9 +9,13 @@ plot3 <- function() {
                Sub_metering_3 = as.numeric(Sub_metering_3),
                Timestamp = as.POSIXct(strptime(paste(Date, Time), "%d/%m/%Y %H:%M:%S")));
     
-    png(filename = "plot3.png", width = 500, height = 500);
+    png(filename = "plot3.png", width = 480, height = 480);
    
-    with(data, plot(Timestamp, pmax(Sub_metering_1, Sub_metering_2, Sub_metering_3), type="n", ylab = "Energy sub meeting"));
+    with(data, plot(Timestamp,
+                    pmax(Sub_metering_1, Sub_metering_2, Sub_metering_3),
+                    type="n",
+                    ylab = "Energy sub meeting",
+                    xlab = ""));
     with(data, lines(Timestamp, Sub_metering_1, col = "Black"));
     with(data, lines(Timestamp, Sub_metering_2, col = "Red"));
     with(data, lines(Timestamp, Sub_metering_3, col = "Blue"));

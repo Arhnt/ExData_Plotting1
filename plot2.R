@@ -7,8 +7,11 @@ plot2 <- function() {
         mutate(Global_active_power = as.numeric(Global_active_power),
                Timestamp = as.POSIXct(strptime(paste(Date, Time), "%d/%m/%Y %H:%M:%S")));
 
-    png(filename = "plot2.png", width = 500, height = 500);
-    with(data, plot(Timestamp, Global_active_power, type="n", ylab = "Global Active Power (kilowatts)"))
+    png(filename = "plot2.png", width = 480, height = 480);
+    with(data, plot(Timestamp, Global_active_power,
+                    type="n",
+                    ylab = "Global Active Power (kilowatts)",
+                    xlab = ""))
     with(data, lines(Timestamp, Global_active_power))
     
     dev.off();

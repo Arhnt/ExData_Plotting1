@@ -12,7 +12,7 @@ plot4 <- function() {
                Global_reactive_power = as.numeric(Global_reactive_power),
                Timestamp = as.POSIXct(strptime(paste(Date, Time), "%d/%m/%Y %H:%M:%S")));
     
-    png(filename = "plot4.png", width = 500, height = 500);
+    png(filename = "plot4.png", width = 480, height = 480);
     par(mfrow = c(2, 2), mar = c(4, 4, 2, 1), oma = c(0,0,0,0));
     
     with(data, plot(Timestamp, Global_active_power, type="n", ylab = "Global Active Power (kilowatts)", xlab = ""))
